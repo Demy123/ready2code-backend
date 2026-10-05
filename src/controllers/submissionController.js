@@ -1,7 +1,23 @@
+import mongoose from 'mongoose';
 import Question from '../models/Question.js';
 import Submission from '../models/Submission.js';
 import User from '../models/User.js';
 import { runCodeAgainstTestCases } from '../services/codeRunner.js';
+
+// Helper to find question by id or slug
+const findQuestionByIdOrSlug = async (identifier) => {
+  if (!identifier) return null;
+  if (mongoose.Types.ObjectId.isValid(identifier)) {
+    const q = await Question.findById(identifier);
+    if (q) return q;
+  }
+  return await Question.findOne({
+    $or: [
+      { slug: identifier },
+      { slug: { $regex: new RegExp(`^${identifier.trim()}$`, 'i') } },
+    ],
+  });
+};
 
 // @desc Run code against visible sample test cases
 // @route POST /api/submissions/run
@@ -13,7 +29,7 @@ export const runCode = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Code and language are required' });
     }
 
-    const question = await Question.findById(questionId);
+    const question = await findQuestionByIdOrSlug(questionId);
     if (!question) {
       return res.status(404).json({ success: false, message: 'Question not found' });
     }
@@ -58,7 +74,7 @@ export const submitCode = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Code and language are required' });
     }
 
-    const question = await Question.findById(questionId);
+    const question = await findQuestionByIdOrSlug(questionId);
     if (!question) {
       return res.status(404).json({ success: false, message: 'Question not found' });
     }
@@ -174,9 +190,17 @@ export const submitCode = async (req, res) => {
 // @route GET /api/submissions/question/:questionId
 export const getQuestionSubmissions = async (req, res) => {
   try {
+    const qParam = req.params.questionId;
+    let targetQuestionId = qParam;
+
+    const question = await findQuestionByIdOrSlug(qParam);
+    if (question) {
+      targetQuestionId = question._id;
+    }
+
     const submissions = await Submission.find({
       user: req.user._id,
-      question: req.params.questionId,
+      question: targetQuestionId,
     })
       .sort({ createdAt: -1 })
       .limit(20);

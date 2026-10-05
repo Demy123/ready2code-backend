@@ -24,13 +24,13 @@ export const seedDatabase = async () => {
       pdfQuestions = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
     }
 
-    if (pdfQuestions.length > 0) {
+    const existingCount = await Question.countDocuments();
+    if (existingCount === 0 && pdfQuestions.length > 0) {
       console.log(`📥 Seeding ${pdfQuestions.length} exact questions from DSA Problem Bank PDF...`);
-      await Question.deleteMany({});
       await Question.insertMany(pdfQuestions);
       console.log(`✅ ${pdfQuestions.length} questions from PDF seeded successfully into MongoDB!`);
     } else {
-      console.warn('⚠️ No pdf170Questions.json found.');
+      console.log(`ℹ️ Database already contains ${existingCount} questions. Preserving existing IDs.`);
     }
 
     // Seed Admin User

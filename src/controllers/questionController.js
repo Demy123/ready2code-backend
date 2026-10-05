@@ -61,18 +61,44 @@ export const getAllQuestions = async (req, res) => {
 export const getQuestionBySlug = async (req, res) => {
   try {
     const param = req.params.slug;
+    if (!param) {
+      return res.status(400).json({ success: false, message: 'Question identifier is required' });
+    }
+
+    // 1. Try exact slug match
     let question = await Question.findOne({ slug: param });
     
+    // 2. Try ObjectId match if valid
     if (!question && mongoose.Types.ObjectId.isValid(param)) {
       question = await Question.findById(param);
     }
     
+    // 3. Try case-insensitive slug match
     if (!question) {
-      question = await Question.findOne({ slug: { $regex: new RegExp(`^${param}$`, 'i') } });
+      question = await Question.findOne({ slug: { $regex: new RegExp(`^${param.trim()}$`, 'i') } });
+    }
+
+    // 4. Try matching title directly or with hyphen replaced
+    if (!question) {
+      const formattedTitle = param.replace(/[-_]/g, ' ').trim();
+      question = await Question.findOne({
+        $or: [
+          { title: { $regex: new RegExp(`^${formattedTitle}$`, 'i') } },
+          { title: { $regex: new RegExp(`^${param.trim()}$`, 'i') } },
+        ],
+      });
+    }
+
+    // 5. Try keyword title match as last fallback
+    if (!question) {
+      const keyword = param.replace(/[-_]/g, ' ').trim();
+      question = await Question.findOne({
+        title: { $regex: keyword, $options: 'i' },
+      });
     }
 
     if (!question) {
-      return res.status(404).json({ success: false, message: 'Question not found' });
+      return res.status(404).json({ success: false, message: `Question "${param}" not found` });
     }
 
     // Exclude hidden test cases if not admin

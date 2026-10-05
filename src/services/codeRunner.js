@@ -127,140 +127,7 @@ const executeJavaScript = async (code, input) => {
 };
 
 /**
- * Executes Python / C++ / Java code using Piston Remote Execution Engine
- */
-const executePiston = async (language, code, input) => {
-  const startTime = Date.now();
-  let pistonLang = language;
-  let filename = 'main.txt';
-
-  if (language === 'python') {
-    pistonLang = 'python';
-    filename = 'solution.py';
-  } else if (language === 'cpp' || language === 'c++') {
-    pistonLang = 'c++';
-    filename = 'solution.cpp';
-  } else if (language === 'java') {
-    pistonLang = 'java';
-    const classMatch = code.match(/public\s+class\s+([A-Za-z0-9_]+)/);
-    const className = classMatch ? classMatch[1] : 'Solution';
-    filename = `${className}.java`;
-  }
-
-  let codeToRun = code;
-  if (language === 'python') {
-    codeToRun = `
-import sys
-import json
-
-${code}
-
-if __name__ == '__main__':
-    try:
-        raw_in = sys.stdin.read()
-        if not raw_in:
-            raw_in = """${input.replace(/"""/g, '\\"\\"\\"') }"""
-        if 'solve' in globals():
-            res = solve(raw_in)
-            if res is not None:
-                if isinstance(res, (list, dict, bool)):
-                    print(json.dumps(res).lower() if isinstance(res, bool) else json.dumps(res))
-                else:
-                    print(res)
-    except Exception as e:
-        print(f"Error: {e}", file=sys.stderr)
-`;
-  }
-
-  try {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 6000);
-
-    const response = await fetch('https://emkc.org/api/v2/piston/execute', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        language: pistonLang,
-        version: '*',
-        files: [{ name: filename, content: codeToRun }],
-        stdin: input || '',
-        run_timeout: TIME_LIMIT_MS,
-        compile_timeout: 5000,
-      }),
-      signal: controller.signal,
-    });
-    clearTimeout(timeout);
-
-    if (!response.ok) {
-      throw new Error(`Sandbox execution failed with status ${response.status}`);
-    }
-
-    const data = await response.json();
-    const executionTime = Date.now() - startTime;
-
-    if (data.compile && data.compile.code !== 0) {
-      return {
-        success: false,
-        error: data.compile.stderr || data.compile.output || 'Compilation Error',
-        executionTime,
-      };
-    }
-
-    if (data.run) {
-      if (
-        data.run.signal === 'SIGTERM' ||
-        data.run.signal === 'SIGKILL' ||
-        (data.run.stderr && data.run.stderr.includes('timed out'))
-      ) {
-        return {
-          success: false,
-          isTimeout: true,
-          error: 'Time Limit Exceeded (3.5s)',
-          executionTime: TIME_LIMIT_MS,
-        };
-      }
-
-      if (data.run.code !== 0 && data.run.stderr) {
-        return {
-          success: false,
-          error: data.run.stderr || data.run.output,
-          actualOutput: data.run.stdout,
-          executionTime,
-        };
-      }
-
-      return {
-        success: true,
-        actualOutput: data.run.stdout || data.run.output || '',
-        executionTime,
-        memory: 24.5,
-      };
-    }
-
-    return {
-      success: false,
-      error: 'No output received from execution sandbox.',
-      executionTime,
-    };
-  } catch (err) {
-    if (err.name === 'AbortError') {
-      return {
-        success: false,
-        isTimeout: true,
-        error: 'Time Limit Exceeded (3.5s)',
-        executionTime: TIME_LIMIT_MS,
-      };
-    }
-    return {
-      success: false,
-      error: err.message || 'Execution failed',
-      executionTime: Date.now() - startTime,
-    };
-  }
-};
-
-/**
- * Executes Python / C++ / Java code using temp files or sandboxed child_process with automatic fallback
+ * Executes Python / C++ / Java code using sandboxed child_process in Docker/Nixpacks container
  */
 const executeExternal = async (language, code, input) => {
   const tmpDir = path.join(os.tmpdir(), `dss_run_${Date.now()}_${Math.random().toString(36).substring(7)}`);
@@ -296,7 +163,7 @@ if __name__ == '__main__':
 `;
       await fs.writeFile(filename, pythonWrapper);
       cmd = `python3 "${filename}"`;
-    } else if (language === 'cpp') {
+    } else if (language === 'cpp' || language === 'c++') {
       filename = path.join(tmpDir, 'solution.cpp');
       const binPath = path.join(tmpDir, 'solution.out');
       await fs.writeFile(filename, code);
@@ -309,7 +176,7 @@ if __name__ == '__main__':
       cmd = `javac "${filename}" && java -cp "${tmpDir}" ${className}`;
     }
 
-    const localResult = await new Promise((resolve) => {
+    return await new Promise((resolve) => {
       const child = exec(
         cmd,
         {
@@ -319,14 +186,19 @@ if __name__ == '__main__':
         (error, stdout, stderr) => {
           const executionTime = Date.now() - startTime;
           if (error) {
-            // Check if compiler/interpreter binary is not found on host
+            // Check if compiler is not found
             const isBinaryNotFound =
               error.code === 127 ||
               (stderr && (stderr.includes('not found') || stderr.includes('is not recognized'))) ||
               (error.message && (error.message.includes('not found') || error.message.includes('ENOENT')));
 
             if (isBinaryNotFound) {
-              return resolve({ fallbackNeeded: true });
+              const toolName = language === 'java' ? 'javac (JDK 17)' : language === 'cpp' ? 'g++ (GCC)' : 'python3';
+              return resolve({
+                success: false,
+                error: `Compiler not installed: ${toolName}. Please deploy the backend via Dockerfile on Railway.`,
+                executionTime,
+              });
             }
 
             if (error.killed || error.signal === 'SIGTERM') {
@@ -360,15 +232,12 @@ if __name__ == '__main__':
         child.stdin.end();
       }
     });
-
-    if (localResult && localResult.fallbackNeeded) {
-      return await executePiston(language, code, input);
-    }
-
-    return localResult;
   } catch (err) {
-    // If local execution fails due to missing environment, seamlessly fallback to Piston engine
-    return await executePiston(language, code, input);
+    return {
+      success: false,
+      error: err.message || 'Execution failed',
+      executionTime: Date.now() - startTime,
+    };
   } finally {
     fs.rm(tmpDir, { recursive: true, force: true }).catch(() => {});
   }

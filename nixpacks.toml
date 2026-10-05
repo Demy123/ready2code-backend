@@ -1,8 +1,12 @@
 [phases.setup]
 nixPkgs = ["nodejs_20", "openjdk17", "gcc", "python3"]
+aptPkgs = ["openjdk-17-jdk-headless", "g++", "python3"]
+
+[phases.install]
+cmds = ["npm install --omit=dev"]
 
 [phases.build]
-cmds = ["npm install --omit=dev"]
+cmds = []
 
 [start]
 cmd = "node src/index.js"

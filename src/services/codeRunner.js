@@ -127,7 +127,131 @@ const executeJavaScript = async (code, input) => {
 };
 
 /**
- * Executes Python / C++ / Java code using sandboxed child_process in Docker/Nixpacks container
+ * Executes Python / C++ / Java code using Paiza Online Engine
+ */
+const executePaiza = async (language, code, input) => {
+  const startTime = Date.now();
+  const langMap = {
+    java: 'java',
+    python: 'python3',
+    cpp: 'cpp',
+    'c++': 'cpp',
+    javascript: 'javascript',
+  };
+
+  let sourceCode = code;
+  if (language === 'java') {
+    sourceCode = sourceCode.replace(/public\s+class\s+Solution/g, 'public class Main');
+    if (!sourceCode.includes('class Main') && sourceCode.includes('class Solution')) {
+      sourceCode = sourceCode.replace(/class\s+Solution/g, 'class Main');
+    }
+  } else if (language === 'python') {
+    sourceCode = `
+import sys
+import json
+
+${code}
+
+if __name__ == '__main__':
+    try:
+        raw_in = sys.stdin.read()
+        if not raw_in:
+            raw_in = """${input.replace(/"""/g, '\\"\\"\\"') }"""
+        if 'solve' in globals():
+            res = solve(raw_in)
+            if res is not None:
+                if isinstance(res, (list, dict, bool)):
+                    print(json.dumps(res).lower() if isinstance(res, bool) else json.dumps(res))
+                else:
+                    print(res)
+    except Exception as e:
+        print(f"Error: {e}", file=sys.stderr)
+`;
+  }
+
+  try {
+    const createRes = await fetch('https://api.paiza.io/runners/create', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        source_code: sourceCode,
+        language: langMap[language] || language,
+        input: input || '',
+        api_key: 'guest',
+      }),
+    });
+
+    if (!createRes.ok) {
+      throw new Error(`Execution server returned ${createRes.status}`);
+    }
+
+    const { id } = await createRes.json();
+    if (!id) {
+      throw new Error('Failed to create execution task');
+    }
+
+    // Poll until completed (max 4.5s)
+    for (let i = 0; i < 18; i++) {
+      await new Promise((r) => setTimeout(r, 250));
+      const detailRes = await fetch(`https://api.paiza.io/runners/get_details?id=${id}&api_key=guest`);
+      if (detailRes.ok) {
+        const data = await detailRes.json();
+        if (data.status === 'completed') {
+          const executionTime = Math.round(parseFloat(data.time || '0.1') * 1000);
+
+          if (data.build_result === 'failure' || (data.build_stderr && data.build_stderr.trim())) {
+            return {
+              success: false,
+              error: data.build_stderr || data.build_stdout || 'Compilation Error',
+              executionTime,
+            };
+          }
+
+          if (data.result === 'timeout') {
+            return {
+              success: false,
+              isTimeout: true,
+              error: 'Time Limit Exceeded (3.5s)',
+              executionTime: TIME_LIMIT_MS,
+            };
+          }
+
+          if (data.result === 'failure' && data.stderr) {
+            return {
+              success: false,
+              error: data.stderr,
+              actualOutput: data.stdout || '',
+              executionTime,
+            };
+          }
+
+          return {
+            success: true,
+            actualOutput: data.stdout || '',
+            executionTime,
+            memory: 24.5,
+          };
+        }
+      }
+    }
+
+    return {
+      success: false,
+      isTimeout: true,
+      error: 'Execution Timed Out',
+      executionTime: TIME_LIMIT_MS,
+    };
+  } catch (err) {
+    return {
+      success: false,
+      error: err.message || 'Execution failed',
+      executionTime: Date.now() - startTime,
+    };
+  }
+};
+
+/**
+ * Executes Python / C++ / Java code using sandboxed child_process or online engine fallback
  */
 const executeExternal = async (language, code, input) => {
   const tmpDir = path.join(os.tmpdir(), `dss_run_${Date.now()}_${Math.random().toString(36).substring(7)}`);
@@ -176,7 +300,7 @@ if __name__ == '__main__':
       cmd = `javac "${filename}" && java -cp "${tmpDir}" ${className}`;
     }
 
-    return await new Promise((resolve) => {
+    const localResult = await new Promise((resolve) => {
       const child = exec(
         cmd,
         {
@@ -193,12 +317,7 @@ if __name__ == '__main__':
               (error.message && (error.message.includes('not found') || error.message.includes('ENOENT')));
 
             if (isBinaryNotFound) {
-              const toolName = language === 'java' ? 'javac (JDK 17)' : language === 'cpp' ? 'g++ (GCC)' : 'python3';
-              return resolve({
-                success: false,
-                error: `Compiler not installed: ${toolName}. Please deploy the backend via Dockerfile on Railway.`,
-                executionTime,
-              });
+              return resolve({ fallbackNeeded: true });
             }
 
             if (error.killed || error.signal === 'SIGTERM') {
@@ -232,12 +351,14 @@ if __name__ == '__main__':
         child.stdin.end();
       }
     });
+
+    if (localResult && localResult.fallbackNeeded) {
+      return await executePaiza(language, code, input);
+    }
+
+    return localResult;
   } catch (err) {
-    return {
-      success: false,
-      error: err.message || 'Execution failed',
-      executionTime: Date.now() - startTime,
-    };
+    return await executePaiza(language, code, input);
   } finally {
     fs.rm(tmpDir, { recursive: true, force: true }).catch(() => {});
   }

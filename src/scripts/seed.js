@@ -29,8 +29,20 @@ export const seedDatabase = async () => {
       console.log(`📥 Seeding ${pdfQuestions.length} exact questions from DSA Problem Bank PDF...`);
       await Question.insertMany(pdfQuestions);
       console.log(`✅ ${pdfQuestions.length} questions from PDF seeded successfully into MongoDB!`);
-    } else {
-      console.log(`ℹ️ Database already contains ${existingCount} questions. Preserving existing IDs.`);
+    } else if (pdfQuestions.length > 0) {
+      console.log(`🔄 Synchronizing sanitized test cases across ${existingCount} questions in MongoDB...`);
+      for (const pq of pdfQuestions) {
+        await Question.updateOne(
+          { slug: pq.slug },
+          {
+            $set: {
+              visibleTestCases: pq.visibleTestCases,
+              hiddenTestCases: pq.hiddenTestCases,
+            },
+          }
+        );
+      }
+      console.log(`✅ Test cases successfully updated for all questions in MongoDB.`);
     }
 
     // Seed Admin User

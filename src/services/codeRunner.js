@@ -364,6 +364,19 @@ if __name__ == '__main__':
   }
 };
 
+const cleanTestCaseInput = (rawInput) => {
+  if (!rawInput) return '';
+  let str = String(rawInput).trim();
+  const hiddenHeaderRegex = /^Hidden Test Case\s+\d+\s*[-—–][^\n]*\n(?:Input\s*\n)?/i;
+  if (hiddenHeaderRegex.test(str)) {
+    str = str.replace(hiddenHeaderRegex, '').trim();
+  }
+  if (/^Input\s*[\n:]\s*/i.test(str)) {
+    str = str.replace(/^Input\s*[\n:]\s*/i, '').trim();
+  }
+  return str;
+};
+
 /**
  * Unified Code Runner across test cases
  */
@@ -377,12 +390,13 @@ export const runCodeAgainstTestCases = async (code, language, testCases, isFullS
 
   for (let i = 0; i < testCases.length; i++) {
     const tc = testCases[i];
+    const sanitizedInput = cleanTestCaseInput(tc.input);
     let execResult;
 
     if (language === 'javascript') {
-      execResult = await executeJavaScript(code, tc.input);
+      execResult = await executeJavaScript(code, sanitizedInput);
     } else {
-      execResult = await executeExternal(language, code, tc.input);
+      execResult = await executeExternal(language, code, sanitizedInput);
     }
 
     totalExecutionTime += execResult.executionTime || 10;

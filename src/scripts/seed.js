@@ -30,19 +30,30 @@ export const seedDatabase = async () => {
       await Question.insertMany(pdfQuestions);
       console.log(`✅ ${pdfQuestions.length} questions from PDF seeded successfully into MongoDB!`);
     } else if (pdfQuestions.length > 0) {
-      console.log(`🔄 Synchronizing sanitized test cases across ${existingCount} questions in MongoDB...`);
+      console.log(`🔄 Synchronizing full question details & test cases across ${existingCount} questions in MongoDB...`);
       for (const pq of pdfQuestions) {
-        await Question.updateOne(
-          { slug: pq.slug },
+        await Question.findOneAndUpdate(
+          { $or: [{ order: pq.order }, { slug: pq.slug }] },
           {
             $set: {
+              title: pq.title,
+              slug: pq.slug,
+              topic: pq.topic,
+              difficulty: pq.difficulty,
+              description: pq.description,
+              constraints: pq.constraints,
+              examples: pq.examples,
+              boilerplates: pq.boilerplates,
               visibleTestCases: pq.visibleTestCases,
               hiddenTestCases: pq.hiddenTestCases,
+              companyTags: pq.companyTags,
+              hints: pq.hints,
             },
-          }
+          },
+          { upsert: true, new: true }
         );
       }
-      console.log(`✅ Test cases successfully updated for all questions in MongoDB.`);
+      console.log(`✅ Full questions & test cases successfully updated for all 170 questions in MongoDB.`);
     }
 
     // Seed Admin User

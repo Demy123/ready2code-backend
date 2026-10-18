@@ -1,0 +1,428 @@
+[
+  [
+    7,
+    7,
+    "Valid Sudoku",
+    "q7-valid-sudoku"
+  ],
+  [
+    8,
+    11,
+    "Subarray Sum Equals K",
+    "q11-subarray-sum-equals-k"
+  ],
+  [
+    9,
+    14,
+    "Two Sum II (Sorted Array)",
+    "q14-two-sum-ii-sorted-array"
+  ],
+  [
+    10,
+    15,
+    "3Sum",
+    "q15-3sum"
+  ],
+  [
+    11,
+    16,
+    "4Sum",
+    "q16-4sum"
+  ],
+  [
+    12,
+    17,
+    "Container With Most Water",
+    "q17-container-with-most-water"
+  ],
+  [
+    13,
+    18,
+    "Trapping Rain Water",
+    "q18-trapping-rain-water"
+  ],
+  [
+    14,
+    20,
+    "Remove Duplicates from Sorted Array",
+    "q20-remove-duplicates-from-sorted-array"
+  ],
+  [
+    15,
+    24,
+    "Permutation in String",
+    "q24-permutation-in-string"
+  ],
+  [
+    16,
+    27,
+    "Fruit Into Baskets",
+    "q27-fruit-into-baskets"
+  ],
+  [
+    17,
+    28,
+    "Max Consecutive Ones III",
+    "q28-max-consecutive-ones-iii"
+  ],
+  [
+    18,
+    29,
+    "Find All Anagrams in a String",
+    "q29-find-all-anagrams-in-a-string"
+  ],
+  [
+    19,
+    30,
+    "Minimum Size Subarray Sum",
+    "q30-minimum-size-subarray-sum"
+  ],
+  [
+    20,
+    35,
+    "Daily Temperatures",
+    "q35-daily-temperatures"
+  ],
+  [
+    21,
+    36,
+    "Car Fleet",
+    "q36-car-fleet"
+  ],
+  [
+    22,
+    37,
+    "Largest Rectangle in Histogram",
+    "q37-largest-rectangle-in-histogram"
+  ],
+  [
+    23,
+    41,
+    "Binary Search",
+    "q41-binary-search"
+  ],
+  [
+    24,
+    45,
+    "Search in Rotated Sorted Array",
+    "q45-search-in-rotated-sorted-array"
+  ],
+  [
+    25,
+    49,
+    "Capacity To Ship Packages Within D Days",
+    "q49-capacity-to-ship-packages-within-d-days"
+  ],
+  [
+    26,
+    50,
+    "Split Array Largest Sum",
+    "q50-split-array-largest-sum"
+  ],
+  [
+    27,
+    53,
+    "Reorder List",
+    "q53-reorder-list"
+  ],
+  [
+    28,
+    54,
+    "Remove Nth Node From End of List",
+    "q54-remove-nth-node-from-end-of-list"
+  ],
+  [
+    29,
+    56,
+    "Add Two Numbers",
+    "q56-add-two-numbers"
+  ],
+  [
+    30,
+    65,
+    "Diameter of Binary Tree",
+    "q65-diameter-of-binary-tree"
+  ],
+  [
+    31,
+    70,
+    "Binary Tree Level Order Traversal",
+    "q70-binary-tree-level-order-traversal"
+  ],
+  [
+    32,
+    71,
+    "Binary Tree Right Side View",
+    "q71-binary-tree-right-side-view"
+  ],
+  [
+    33,
+    72,
+    "Count Good Nodes in Binary Tree",
+    "q72-count-good-nodes-in-binary-tree"
+  ],
+  [
+    34,
+    74,
+    "Kth Smallest Element in a BST",
+    "q74-kth-smallest-element-in-a-bst"
+  ],
+  [
+    35,
+    76,
+    "Binary Tree Maximum Path Sum",
+    "q76-binary-tree-maximum-path-sum"
+  ],
+  [
+    36,
+    78,
+    "Path Sum II",
+    "q78-path-sum-ii"
+  ],
+  [
+    37,
+    80,
+    "Vertical Order Traversal of a Binary Tree",
+    "q80-vertical-order-traversal-of-a-binary-tree"
+  ],
+  [
+    38,
+    81,
+    "Implement Trie",
+    "q81-implement-trie"
+  ],
+  [
+    39,
+    82,
+    "Design Add and Search Words Data Structure",
+    "q82-design-add-and-search-words-data-structure"
+  ],
+  [
+    40,
+    83,
+    "Word Search II",
+    "q83-word-search-ii"
+  ],
+  [
+    41,
+    85,
+    "Kth Largest Element in a Stream",
+    "q85-kth-largest-element-in-a-stream"
+  ],
+  [
+    42,
+    86,
+    "Last Stone Weight",
+    "q86-last-stone-weight"
+  ],
+  [
+    43,
+    87,
+    "K Closest Points to Origin",
+    "q87-k-closest-points-to-origin"
+  ],
+  [
+    44,
+    90,
+    "Design Twitter",
+    "q90-design-twitter"
+  ],
+  [
+    45,
+    93,
+    "Reorganize String",
+    "q93-reorganize-string"
+  ],
+  [
+    46,
+    94,
+    "Subsets",
+    "q94-subsets"
+  ],
+  [
+    47,
+    95,
+    "Combination Sum",
+    "q95-combination-sum"
+  ],
+  [
+    48,
+    96,
+    "Combination Sum II",
+    "q96-combination-sum-ii"
+  ],
+  [
+    49,
+    97,
+    "Permutations",
+    "q97-permutations"
+  ],
+  [
+    50,
+    98,
+    "Subsets II",
+    "q98-subsets-ii"
+  ],
+  [
+    100,
+    100,
+    "Palindrome Partitioning",
+    "q100-palindrome-partitioning"
+  ],
+  [
+    103,
+    103,
+    "Sudoku Solver",
+    "q103-sudoku-solver"
+  ],
+  [
+    104,
+    104,
+    "Generate All Valid IP Addresses",
+    "q104-generate-all-valid-ip-addresses"
+  ],
+  [
+    107,
+    107,
+    "Clone Graph",
+    "q107-clone-graph"
+  ],
+  [
+    108,
+    108,
+    "Walls and Gates",
+    "q108-walls-and-gates"
+  ],
+  [
+    109,
+    109,
+    "Rotting Oranges",
+    "q109-rotting-oranges"
+  ],
+  [
+    110,
+    110,
+    "Pacific Atlantic Water Flow",
+    "q110-pacific-atlantic-water-flow"
+  ],
+  [
+    113,
+    113,
+    "Course Schedule II",
+    "q113-course-schedule-ii"
+  ],
+  [
+    119,
+    119,
+    "Min Cost to Connect All Points",
+    "q119-min-cost-to-connect-all-points"
+  ],
+  [
+    122,
+    122,
+    "Alien Dictionary",
+    "q122-alien-dictionary"
+  ],
+  [
+    123,
+    123,
+    "Cheapest Flights Within K Stops",
+    "q123-cheapest-flights-within-k-stops"
+  ],
+  [
+    130,
+    130,
+    "House Robber II",
+    "q130-house-robber-ii"
+  ],
+  [
+    131,
+    131,
+    "Longest Palindromic Substring",
+    "q131-longest-palindromic-substring"
+  ],
+  [
+    139,
+    139,
+    "Combination Sum IV",
+    "q139-combination-sum-iv"
+  ],
+  [
+    141,
+    141,
+    "Jump Game",
+    "q141-jump-game"
+  ],
+  [
+    144,
+    144,
+    "Best Time to Buy and Sell Stock with Cooldown",
+    "q144-best-time-to-buy-and-sell-stock-with-cooldown"
+  ],
+  [
+    145,
+    145,
+    "Coin Change II",
+    "q145-coin-change-ii"
+  ],
+  [
+    147,
+    147,
+    "Interleaving String",
+    "q147-interleaving-string"
+  ],
+  [
+    148,
+    148,
+    "Longest Increasing Path in a Matrix",
+    "q148-longest-increasing-path-in-a-matrix"
+  ],
+  [
+    150,
+    150,
+    "Edit Distance",
+    "q150-edit-distance"
+  ],
+  [
+    151,
+    151,
+    "Burst Balloons",
+    "q151-burst-balloons"
+  ],
+  [
+    152,
+    152,
+    "Maximum Subarray",
+    "q152-maximum-subarray"
+  ],
+  [
+    153,
+    153,
+    "Jump Game II",
+    "q153-jump-game-ii"
+  ],
+  [
+    154,
+    154,
+    "Gas Station",
+    "q154-gas-station"
+  ],
+  [
+    155,
+    155,
+    "Hand of Straights",
+    "q155-hand-of-straights"
+  ],
+  [
+    156,
+    156,
+    "Merge Triplets to Form Target Triplet",
+    "q156-merge-triplets-to-form-target-triplet"
+  ],
+  [
+    164,
+    164,
+    "Minimum Interval to Include Each Query",
+    "q164-minimum-interval-to-include-each-query"
+  ]
+]

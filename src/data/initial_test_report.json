@@ -1,0 +1,1969 @@
+[
+  {
+    "order": 7,
+    "title": "Valid Sudoku",
+    "status": "FAILED",
+    "passed": 9,
+    "total": 11,
+    "details": [
+      {
+        "case": 1,
+        "passed": false,
+        "input": "53..7....\n6..195...\n.98....6.\n8...6...3\n4..8.3..1\n7...2...6\n.6....28.\n...419..5\n...8..79.",
+        "expected": "true",
+        "actual": "false",
+        "stderr": ""
+      },
+      {
+        "case": 10,
+        "passed": false,
+        "input": "12.......\n.........\n.........\n.........\n.........\n.........\n.........\n.........\n.........",
+        "expected": "false",
+        "actual": "true",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 11,
+    "title": "Subarray Sum Equals K",
+    "status": "FAILED",
+    "passed": 4,
+    "total": 11,
+    "details": [
+      {
+        "case": 2,
+        "passed": false,
+        "input": "3 3\n1 1 1",
+        "expected": "2",
+        "actual": "1",
+        "stderr": ""
+      },
+      {
+        "case": 4,
+        "passed": false,
+        "input": "5 5\n5 1 2 3 4",
+        "expected": "1",
+        "actual": "2",
+        "stderr": ""
+      },
+      {
+        "case": 6,
+        "passed": false,
+        "input": "6 3\n1 2 -1 2 1 -2",
+        "expected": "5",
+        "actual": "4",
+        "stderr": ""
+      },
+      {
+        "case": 7,
+        "passed": false,
+        "input": "5 -3\n-1 -2 3 -3 1",
+        "expected": "4",
+        "actual": "3",
+        "stderr": ""
+      },
+      {
+        "case": 9,
+        "passed": false,
+        "input": "6 10\n1 2 3 4 5 6",
+        "expected": "2",
+        "actual": "1",
+        "stderr": ""
+      },
+      {
+        "case": 10,
+        "passed": false,
+        "input": "7 7\n3 4 1 2 5 2 1",
+        "expected": "3",
+        "actual": "4",
+        "stderr": ""
+      },
+      {
+        "case": 11,
+        "passed": false,
+        "input": "8 0\n2 -2 3 -3 4 -4 5 -5",
+        "expected": "8",
+        "actual": "10",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 14,
+    "title": "Two Sum II (Sorted Array)",
+    "status": "FAILED",
+    "passed": 6,
+    "total": 11,
+    "details": [
+      {
+        "case": 3,
+        "passed": false,
+        "input": "4 10\n1 3 7 9",
+        "expected": "2 4",
+        "actual": "1 4",
+        "stderr": ""
+      },
+      {
+        "case": 6,
+        "passed": false,
+        "input": "5 6\n-4 -1 2 4 7",
+        "expected": "3 4",
+        "actual": "2 5",
+        "stderr": ""
+      },
+      {
+        "case": 8,
+        "passed": false,
+        "input": "5 14\n2 4 6 8 12",
+        "expected": "2 5",
+        "actual": "1 5",
+        "stderr": ""
+      },
+      {
+        "case": 9,
+        "passed": false,
+        "input": "6 3\n-5 -2 -1 2 4 7",
+        "expected": "2 6",
+        "actual": "3 5",
+        "stderr": ""
+      },
+      {
+        "case": 11,
+        "passed": false,
+        "input": "7 15\n1 2 4 6 9 11 14",
+        "expected": "2 7",
+        "actual": "1 7",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 15,
+    "title": "3Sum",
+    "status": "FAILED",
+    "passed": 9,
+    "total": 11,
+    "details": [
+      {
+        "case": 5,
+        "passed": false,
+        "input": "5\n-2 -1 0 1 2",
+        "expected": "-2 0 2\n-2 1 1\n-1 0 1",
+        "actual": "-2 0 2\n-1 0 1",
+        "stderr": ""
+      },
+      {
+        "case": 9,
+        "passed": false,
+        "input": "6\n-5 2 3 1 4 -1",
+        "expected": "-5 1 4\n-5 2 3\n-1 0 1",
+        "actual": "-5 1 4\n-5 2 3",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 16,
+    "title": "4Sum",
+    "status": "FAILED",
+    "passed": 6,
+    "total": 11,
+    "details": [
+      {
+        "case": 6,
+        "passed": false,
+        "input": "6 5\n1 0 -1 0 2 3",
+        "expected": "-1 0 3 3\n-1 1 2 3\n0 0 2 3",
+        "actual": "-1 1 2 3\n0 0 2 3",
+        "stderr": ""
+      },
+      {
+        "case": 7,
+        "passed": false,
+        "input": "6 8\n2 2 2 2 4 4",
+        "expected": "-1",
+        "actual": "2 2 2 2",
+        "stderr": ""
+      },
+      {
+        "case": 8,
+        "passed": false,
+        "input": "7 0\n-3 -2 -1 0 1 2 3",
+        "expected": "-3 -2 2 3\n-3 -1 1 3\n-2 -1 0 3\n-2 -1 1 2",
+        "actual": "-3 -2 2 3\n-3 -1 1 3\n-3 0 1 2\n-2 -1 0 3\n-2 -1 1 2",
+        "stderr": ""
+      },
+      {
+        "case": 10,
+        "passed": false,
+        "input": "6 6\n1 1 1 1 3 3",
+        "expected": "-1",
+        "actual": "1 1 1 3",
+        "stderr": ""
+      },
+      {
+        "case": 11,
+        "passed": false,
+        "input": "8 0\n-4 -2 -1 0 1 2 3 4",
+        "expected": "-4 -2 2 4\n-4 -1 1 4\n-4 0 1 3\n-4 0 2 2\n-2 -1 0 3\n-2 -1 1 2",
+        "actual": "-4 -2 2 4\n-4 -1 1 4\n-4 -1 2 3\n-4 0 1 3\n-2 -1 0 3\n-2 -1 1 2",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 17,
+    "title": "Container With Most Water",
+    "status": "FAILED",
+    "passed": 9,
+    "total": 11,
+    "details": [
+      {
+        "case": 8,
+        "passed": false,
+        "input": "7\n7 1 5 3 6 4 2",
+        "expected": "30",
+        "actual": "24",
+        "stderr": ""
+      },
+      {
+        "case": 10,
+        "passed": false,
+        "input": "6\n0 5 0 5 0 5",
+        "expected": "10",
+        "actual": "20",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 18,
+    "title": "Trapping Rain Water",
+    "status": "FAILED",
+    "passed": 8,
+    "total": 11,
+    "details": [
+      {
+        "case": 7,
+        "passed": false,
+        "input": "6\n4 1 1 0 2 5",
+        "expected": "13",
+        "actual": "12",
+        "stderr": ""
+      },
+      {
+        "case": 10,
+        "passed": false,
+        "input": "9\n5 2 1 2 1 5 0 3 4",
+        "expected": "13",
+        "actual": "19",
+        "stderr": ""
+      },
+      {
+        "case": 11,
+        "passed": false,
+        "input": "10\n3 0 0 2 0 4 0 1 0 3",
+        "expected": "17",
+        "actual": "18",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 20,
+    "title": "Remove Duplicates from Sorted Array",
+    "status": "FAILED",
+    "passed": 10,
+    "total": 11,
+    "details": [
+      {
+        "case": 11,
+        "passed": false,
+        "input": "8\n-1000000000 -1000000000 -5 0 0 5 1000000000 1000000000",
+        "expected": "4\n-1000000000 -5 0 5",
+        "actual": "5\n-1000000000 -5 0 5 1000000000",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 24,
+    "title": "Permutation in String",
+    "status": "FAILED",
+    "passed": 10,
+    "total": 11,
+    "details": [
+      {
+        "case": 10,
+        "passed": false,
+        "input": "aaaa\naa",
+        "expected": "true",
+        "actual": "false",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 27,
+    "title": "Fruit Into Baskets",
+    "status": "FAILED",
+    "passed": 8,
+    "total": 11,
+    "details": [
+      {
+        "case": 6,
+        "passed": false,
+        "input": "7\n1 2 3 4 5 5 5",
+        "expected": "3",
+        "actual": "4",
+        "stderr": ""
+      },
+      {
+        "case": 8,
+        "passed": false,
+        "input": "9\n1 1 2 2 3 3 3 2 2",
+        "expected": "5",
+        "actual": "7",
+        "stderr": ""
+      },
+      {
+        "case": 11,
+        "passed": false,
+        "input": "10\n1 2 1 3 4 3 3 4 4 3",
+        "expected": "5",
+        "actual": "7",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 28,
+    "title": "Max Consecutive Ones III",
+    "status": "FAILED",
+    "passed": 9,
+    "total": 11,
+    "details": [
+      {
+        "case": 2,
+        "passed": false,
+        "input": "5 2\n1 1 0 0 1",
+        "expected": "4",
+        "actual": "5",
+        "stderr": ""
+      },
+      {
+        "case": 11,
+        "passed": false,
+        "input": "10 3\n0 1 0 1 1 0 1 0 1 1",
+        "expected": "7",
+        "actual": "9",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 29,
+    "title": "Find All Anagrams in a String",
+    "status": "COMPILE_ERROR",
+    "passed": 0,
+    "total": 11,
+    "compile_error": "/var/folders/w3/82_4pzk16cn7s0tl2d9yfznm0000gn/T/tmp4jnneg5j/Solution.java:1: error: ';' expected\nimport java.util.* \n                  ^\n1 error",
+    "details": []
+  },
+  {
+    "order": 30,
+    "title": "Minimum Size Subarray Sum",
+    "status": "FAILED",
+    "passed": 8,
+    "total": 11,
+    "details": [
+      {
+        "case": 8,
+        "passed": false,
+        "input": "3 5\n10 1 1",
+        "expected": "1",
+        "actual": "",
+        "stderr": "Exception in thread \"main\" java.util.NoSuchElementException\n\tat java.base/java.util.Scanner.throwFor(Scanner.java:945)\n\tat java.base/java.util.Scanner"
+      },
+      {
+        "case": 10,
+        "passed": false,
+        "input": "100 5\n10 20 30 40 50",
+        "expected": "0",
+        "actual": "3",
+        "stderr": ""
+      },
+      {
+        "case": 11,
+        "passed": false,
+        "input": "8 5\n2 1 5 2 3",
+        "expected": "2",
+        "actual": "3",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 35,
+    "title": "Daily Temperatures",
+    "status": "FAILED",
+    "passed": 7,
+    "total": 8,
+    "details": [
+      {
+        "case": 5,
+        "passed": false,
+        "input": "5\n70 80 60 90 100",
+        "expected": "1 3 1 1 0",
+        "actual": "1 2 1 1 0",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 36,
+    "title": "Car Fleet",
+    "status": "FAILED",
+    "passed": 5,
+    "total": 7,
+    "details": [
+      {
+        "case": 2,
+        "passed": false,
+        "input": "10 3\n6 8 9\n3 2 1",
+        "expected": "1",
+        "actual": "2",
+        "stderr": ""
+      },
+      {
+        "case": 7,
+        "passed": false,
+        "input": "20 4\n5 10 15 18\n2 2 1 1",
+        "expected": "4",
+        "actual": "3",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 37,
+    "title": "Largest Rectangle in Histogram",
+    "status": "FAILED",
+    "passed": 8,
+    "total": 9,
+    "details": [
+      {
+        "case": 9,
+        "passed": false,
+        "input": "7\n2 1 2 3 1 2 4",
+        "expected": "6",
+        "actual": "7",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 41,
+    "title": "Binary Search",
+    "status": "FAILED",
+    "passed": 8,
+    "total": 9,
+    "details": [
+      {
+        "case": 7,
+        "passed": false,
+        "input": "7\n1 2 2 2 3 4 5\n2",
+        "expected": "1",
+        "actual": "3",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 45,
+    "title": "Search in Rotated Sorted Array",
+    "status": "FAILED",
+    "passed": 6,
+    "total": 7,
+    "details": [
+      {
+        "case": 5,
+        "passed": false,
+        "input": "1\n42",
+        "expected": "0",
+        "actual": "-1",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 49,
+    "title": "Capacity To Ship Packages Within D Days",
+    "status": "FAILED",
+    "passed": 9,
+    "total": 10,
+    "details": [
+      {
+        "case": 2,
+        "passed": false,
+        "input": "5 3\n3 2 2 4 1",
+        "expected": "6",
+        "actual": "5",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 50,
+    "title": "Split Array Largest Sum",
+    "status": "FAILED",
+    "passed": 5,
+    "total": 6,
+    "details": [
+      {
+        "case": 6,
+        "passed": false,
+        "input": "5 2\n1 1 1 100 1",
+        "expected": "100",
+        "actual": "101",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 53,
+    "title": "Reorder List",
+    "status": "FAILED",
+    "passed": 7,
+    "total": 8,
+    "details": [
+      {
+        "case": 8,
+        "passed": false,
+        "input": "7\n1 1 2 2 3 3 4",
+        "expected": "1 4 1 3 2 2 3",
+        "actual": "1 4 1 3 2 3 2",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 54,
+    "title": "Remove Nth Node From End of List",
+    "status": "FAILED",
+    "passed": 9,
+    "total": 10,
+    "details": [
+      {
+        "case": 10,
+        "passed": false,
+        "input": "8\n100 200 300 400 500 600 700 800\n7",
+        "expected": "200 300 400 500 600 700 800",
+        "actual": "100 300 400 500 600 700 800",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 56,
+    "title": "Add Two Numbers",
+    "status": "FAILED",
+    "passed": 5,
+    "total": 6,
+    "details": [
+      {
+        "case": 6,
+        "passed": false,
+        "input": "5\n5 4 3 2 1\n3\n5 5 5",
+        "expected": "0 0 4 2 1",
+        "actual": "0 0 9 2 1",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 65,
+    "title": "Diameter of Binary Tree",
+    "status": "FAILED",
+    "passed": 7,
+    "total": 9,
+    "details": [
+      {
+        "case": 7,
+        "passed": false,
+        "input": "4\n1 2 -1 3",
+        "expected": "3",
+        "actual": "2",
+        "stderr": ""
+      },
+      {
+        "case": 9,
+        "passed": false,
+        "input": "5\n1 2 -1 3 -1",
+        "expected": "3",
+        "actual": "2",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 70,
+    "title": "Binary Tree Level Order Traversal",
+    "status": "FAILED",
+    "passed": 6,
+    "total": 8,
+    "details": [
+      {
+        "case": 5,
+        "passed": false,
+        "input": "4\n1 -1 2 -1 3",
+        "expected": "1\n2\n3",
+        "actual": "1\n2",
+        "stderr": ""
+      },
+      {
+        "case": 8,
+        "passed": false,
+        "input": "7\n-1 -2 -3 -4 -5 -6 -7",
+        "expected": "-1\n-2 -3\n-4 -5 -6 -7",
+        "actual": "",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 71,
+    "title": "Binary Tree Right Side View",
+    "status": "FAILED",
+    "passed": 8,
+    "total": 11,
+    "details": [
+      {
+        "case": 6,
+        "passed": false,
+        "input": "4\n1 -1 2 -1 3",
+        "expected": "1 2 3",
+        "actual": "1 2",
+        "stderr": ""
+      },
+      {
+        "case": 8,
+        "passed": false,
+        "input": "7\n-1 -2 -3 -4 -5 -6 -7",
+        "expected": "-1 -3 -7",
+        "actual": "",
+        "stderr": ""
+      },
+      {
+        "case": 11,
+        "passed": false,
+        "input": "7\n1 2 3 4 5 -1 -1",
+        "expected": "1 3 5\nSource cases: DSA Problem Bank_1(2)",
+        "actual": "1 3 5",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 72,
+    "title": "Count Good Nodes in Binary Tree",
+    "status": "FAILED",
+    "passed": 6,
+    "total": 9,
+    "details": [
+      {
+        "case": 1,
+        "passed": false,
+        "input": "7\n3 1 4 -1 -1 3 5",
+        "expected": "4",
+        "actual": "3",
+        "stderr": ""
+      },
+      {
+        "case": 7,
+        "passed": false,
+        "input": "7\n-1 -2 0 -3 -1 -4 1",
+        "expected": "4",
+        "actual": "3",
+        "stderr": ""
+      },
+      {
+        "case": 9,
+        "passed": false,
+        "input": "7\n3 4 5 4 4 5 6",
+        "expected": "5",
+        "actual": "7",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 74,
+    "title": "Kth Smallest Element in a BST",
+    "status": "FAILED",
+    "passed": 8,
+    "total": 10,
+    "details": [
+      {
+        "case": 2,
+        "passed": false,
+        "input": "5\n3 1 4 -1 2\n3",
+        "expected": "3",
+        "actual": "2",
+        "stderr": ""
+      },
+      {
+        "case": 10,
+        "passed": false,
+        "input": "3\n2 1 3\n2",
+        "expected": "2\nSource cases: DSA Problem Bank_1(2)",
+        "actual": "2",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 76,
+    "title": "Binary Tree Maximum Path Sum",
+    "status": "FAILED",
+    "passed": 8,
+    "total": 9,
+    "details": [
+      {
+        "case": 9,
+        "passed": false,
+        "input": "7\n1 2 3 4 5 6 7",
+        "expected": "17",
+        "actual": "18",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 78,
+    "title": "Path Sum II",
+    "status": "COMPILE_ERROR",
+    "passed": 0,
+    "total": 9,
+    "compile_error": "/var/folders/w3/82_4pzk16cn7s0tl2d9yfznm0000gn/T/tmp74bapk5v/Solution.java:40: error: ')' expected\n                if (rightV al != -1) { \n                          ^\n/var/folders/w3/82_4pzk16cn7s0tl2d9yfznm0000gn/T/tmp74bapk5v/Solution.java:40: error: not a statement\n                if (rightV al !",
+    "details": []
+  },
+  {
+    "order": 80,
+    "title": "Vertical Order Traversal of a Binary Tree",
+    "status": "FAILED",
+    "passed": 3,
+    "total": 6,
+    "details": [
+      {
+        "case": 4,
+        "passed": false,
+        "input": "4\n1 2 -1 3",
+        "expected": "[\n[3],\n[2],\n[1]\n]",
+        "actual": "[[3],[2],[1]]",
+        "stderr": ""
+      },
+      {
+        "case": 5,
+        "passed": false,
+        "input": "5\n1 -1 2 -1 3",
+        "expected": "[\n[1],\n[2],\n[3]\n]",
+        "actual": "[[1],[2],[3]]",
+        "stderr": ""
+      },
+      {
+        "case": 6,
+        "passed": false,
+        "input": "7\n1 2 3 4 5 6 7",
+        "expected": "[\n[4],\n[2],\n[1, 5, 6],\n[3],\n[7]\n]",
+        "actual": "[[4],[2],[1,5,6],[3],[7]]",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 81,
+    "title": "Implement Trie",
+    "status": "FAILED",
+    "passed": 10,
+    "total": 11,
+    "details": [
+      {
+        "case": 4,
+        "passed": false,
+        "input": "7\ninsert car\ninsert card\ninsert care\ninsert careful\nsearch car\nsearch care\nstartsWith care\nstartsWith caf",
+        "expected": "true\ntrue\ntrue\nfalse",
+        "actual": "true\ntrue\ntrue",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 82,
+    "title": "Design Add and Search Words Data Structure",
+    "status": "FAILED",
+    "passed": 8,
+    "total": 9,
+    "details": [
+      {
+        "case": 2,
+        "passed": false,
+        "input": "6\naddWord apple\naddWord apply\nsearch app.e\nsearch a....\nsearch appl.\nsearch banana",
+        "expected": "false\ntrue\ntrue\nfalse",
+        "actual": "true\ntrue\ntrue\nfalse",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 83,
+    "title": "Word Search II",
+    "status": "FAILED",
+    "passed": 8,
+    "total": 10,
+    "details": [
+      {
+        "case": 9,
+        "passed": false,
+        "input": "2 2\na b\nc d\n2\nad\nabc",
+        "expected": "Input\n1 2\na b\n2\naba\nab\nOutput\nab",
+        "actual": "",
+        "stderr": ""
+      },
+      {
+        "case": 10,
+        "passed": false,
+        "input": "3 3\no a t\ne t a\ni h k\n5\noat\neat\noath\ntea\nhat",
+        "expected": "eat\nhat\noat\ntea",
+        "actual": "oat\noath",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 85,
+    "title": "Kth Largest Element in a Stream",
+    "status": "FAILED",
+    "passed": 9,
+    "total": 10,
+    "details": [
+      {
+        "case": 5,
+        "passed": false,
+        "input": "2\n-10 -5\n-20 -1",
+        "expected": "-5\n-5",
+        "actual": "-10\n-5",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 86,
+    "title": "Last Stone Weight",
+    "status": "FAILED",
+    "passed": 9,
+    "total": 10,
+    "details": [
+      {
+        "case": 6,
+        "passed": false,
+        "input": "4\n10 9 8 7",
+        "expected": "2",
+        "actual": "0",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 87,
+    "title": "K Closest Points to Origin",
+    "status": "FAILED",
+    "passed": 5,
+    "total": 7,
+    "details": [
+      {
+        "case": 4,
+        "passed": false,
+        "input": "3\n1 2\n-3 4\n0 1\n3",
+        "expected": "1 2\n-3 4\n0 1",
+        "actual": "0 1\n1 2\n-3 4",
+        "stderr": ""
+      },
+      {
+        "case": 6,
+        "passed": false,
+        "input": "4\n1 0\n0 1\n-1 0\n0 -1\n2",
+        "expected": "any 2 valid closest points",
+        "actual": "-1 0\n0 1",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 90,
+    "title": "Design Twitter",
+    "status": "FAILED",
+    "passed": 5,
+    "total": 7,
+    "details": [
+      {
+        "case": 5,
+        "passed": false,
+        "input": "postTweet(1, 1)\npostTweet(1, 2)\npostTweet(1, 3)\npostTweet(1, 4)\npostTweet(1, 5)\npostTweet(1, 6)\npostTweet(1, 7)\npostTweet(1, 8)\npostTweet(1, 9)\npostTweet(1, 10)\npostTweet(1, 11)\npostTweet(1, 12)\ngetNewsFeed(1)",
+        "expected": "[12,11,10,9,8,7,6,5,4,3]",
+        "actual": "[12, 11, 10, 9, 8, 7, 6, 5, 4, 3]",
+        "stderr": ""
+      },
+      {
+        "case": 7,
+        "passed": false,
+        "input": "postTweet(1, 10)\npostTweet(2, 20)\npostTweet(1, 30)\npostTweet(2, 40)\nfollow(1, 2)\ngetNewsFeed(1)",
+        "expected": "[40,30,20,10]",
+        "actual": "[40, 30, 20, 10]",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 93,
+    "title": "Reorganize String",
+    "status": "FAILED",
+    "passed": 5,
+    "total": 8,
+    "details": [
+      {
+        "case": 4,
+        "passed": false,
+        "input": "abcd",
+        "expected": "aba",
+        "actual": "acbd",
+        "stderr": ""
+      },
+      {
+        "case": 7,
+        "passed": false,
+        "input": "aabb",
+        "expected": "abab\nor\nbaba",
+        "actual": "abab",
+        "stderr": ""
+      },
+      {
+        "case": 8,
+        "passed": false,
+        "input": "aaabc",
+        "expected": "\"\"",
+        "actual": "abaca",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 94,
+    "title": "Subsets",
+    "status": "FAILED",
+    "passed": 5,
+    "total": 8,
+    "details": [
+      {
+        "case": 3,
+        "passed": false,
+        "input": "0",
+        "expected": "[[]]",
+        "actual": "[]",
+        "stderr": ""
+      },
+      {
+        "case": 6,
+        "passed": false,
+        "input": "4\n1 2 3 4",
+        "expected": "16 subsets",
+        "actual": "[]\n[1]\n[2]\n[3]\n[4]\n[1,2]\n[1,3]\n[1,4]\n[2,3]\n[2,4]\n[3,4]\n[1,2,3]\n[1,2,4]\n[1,3,4]\n[2,3,4]\n[1,2,3,4]",
+        "stderr": ""
+      },
+      {
+        "case": 8,
+        "passed": false,
+        "input": "5\n1 2 3 4 5",
+        "expected": "32 subsets",
+        "actual": "[]\n[1]\n[2]\n[3]\n[4]\n[5]\n[1,2]\n[1,3]\n[1,4]\n[1,5]\n[2,3]\n[2,4]\n[2,5]\n[3,4]\n[3,5]\n[4,5]\n[1,2,3]\n[1,2,4]\n[1,2,5]\n[1,3,4]\n[1,3,5]\n[1,4,5]\n[2,3,4]\n[2,3,5]\n[2,4,5]\n[3,4,5]\n[1,2,3,4]\n[1,2,3,5]\n[1,2,4,5]\n[1,3,4,5]\n[2,3,4,5]\n[1,2,3,4,5]",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 95,
+    "title": "Combination Sum",
+    "status": "FAILED",
+    "passed": 5,
+    "total": 8,
+    "details": [
+      {
+        "case": 2,
+        "passed": false,
+        "input": "candidates = [2,3,5]\ntarget = 8",
+        "expected": "[2,2,2,2]\n[2,3,3]\n[3,5]",
+        "actual": "[3,5]",
+        "stderr": ""
+      },
+      {
+        "case": 4,
+        "passed": false,
+        "input": "candidates = [4]\ntarget = 3",
+        "expected": "[]",
+        "actual": "",
+        "stderr": ""
+      },
+      {
+        "case": 6,
+        "passed": false,
+        "input": "candidates = [1,2]\ntarget = 4",
+        "expected": "[1,1,1,1]\n[1,1,2]\n[2,2]",
+        "actual": "[2,2]",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 96,
+    "title": "Combination Sum II",
+    "status": "FAILED",
+    "passed": 6,
+    "total": 9,
+    "details": [
+      {
+        "case": 4,
+        "passed": false,
+        "input": "4\n2 4 6 8\n5",
+        "expected": "[]",
+        "actual": "",
+        "stderr": ""
+      },
+      {
+        "case": 6,
+        "passed": false,
+        "input": "6\n1 2 3 4 5 6\n7",
+        "expected": "[1,6]\n[2,5]\n[3,4]\n[1,2,4]",
+        "actual": "[1,2,4]\n[1,6]\n[2,5]\n[3,4]",
+        "stderr": ""
+      },
+      {
+        "case": 8,
+        "passed": false,
+        "input": "6\n1 1 2 2 2 5\n5",
+        "expected": "[1,1,2]\n[5]",
+        "actual": "[1,2,2]\n[5]",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 97,
+    "title": "Permutations",
+    "status": "FAILED",
+    "passed": 8,
+    "total": 9,
+    "details": [
+      {
+        "case": 8,
+        "passed": false,
+        "input": "2\n-5 7",
+        "expected": "[[-5,7],[7,-5]]",
+        "actual": "[-5,7]\n[7,-5]",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 98,
+    "title": "Subsets II",
+    "status": "FAILED",
+    "passed": 1,
+    "total": 10,
+    "details": [
+      {
+        "case": 2,
+        "passed": false,
+        "input": "3\n1 2 3",
+        "expected": "8 unique subsets",
+        "actual": "[]\n[1]\n[1,2]\n[1,2,3]\n[1,3]\n[2]\n[2,3]\n[3]",
+        "stderr": ""
+      },
+      {
+        "case": 3,
+        "passed": false,
+        "input": "3\n2 2 2",
+        "expected": "[[],[2],[2,2],[2,2,2]]",
+        "actual": "[]\n[2]\n[2,2]\n[2,2,2]",
+        "stderr": ""
+      },
+      {
+        "case": 4,
+        "passed": false,
+        "input": "1\n5",
+        "expected": "[[],[5]]",
+        "actual": "[]\n[5]",
+        "stderr": ""
+      },
+      {
+        "case": 5,
+        "passed": false,
+        "input": "0",
+        "expected": "[[]]",
+        "actual": "[]",
+        "stderr": ""
+      },
+      {
+        "case": 6,
+        "passed": false,
+        "input": "4\n1 1 2 2",
+        "expected": "8 unique subsets",
+        "actual": "[]\n[1]\n[1,1]\n[1,1,2]\n[1,1,2,2]\n[1,2]\n[1,2,2]\n[2]\n[2,2]",
+        "stderr": ""
+      },
+      {
+        "case": 7,
+        "passed": false,
+        "input": "4\n-1 0 1 1",
+        "expected": "12 unique subsets",
+        "actual": "[]\n[-1]\n[-1,0]\n[-1,0,1]\n[-1,0,1,1]\n[-1,1]\n[-1,1,1]\n[0]\n[0,1]\n[0,1,1]\n[1]\n[1,1]",
+        "stderr": ""
+      },
+      {
+        "case": 8,
+        "passed": false,
+        "input": "5\n0 0 1 1 1",
+        "expected": "12 unique subsets",
+        "actual": "[]\n[0]\n[0,0]\n[0,0,1]\n[0,0,1,1]\n[0,0,1,1,1]\n[0,1]\n[0,1,1]\n[0,1,1,1]\n[1]\n[1,1]\n[1,1,1]",
+        "stderr": ""
+      },
+      {
+        "case": 9,
+        "passed": false,
+        "input": "4\n-2 -2 -1 3",
+        "expected": "12 unique subsets",
+        "actual": "[]\n[-2]\n[-2,-2]\n[-2,-2,-1]\n[-2,-2,-1,3]\n[-2,-2,3]\n[-2,-1]\n[-2,-1,3]\n[-2,3]\n[-1]\n[-1,3]\n[3]",
+        "stderr": ""
+      },
+      {
+        "case": 10,
+        "passed": false,
+        "input": "5\n1 2 2 3 3",
+        "expected": "18 unique subsets",
+        "actual": "[]\n[1]\n[1,2]\n[1,2,2]\n[1,2,2,3]\n[1,2,2,3,3]\n[1,2,3]\n[1,2,3,3]\n[1,3]\n[1,3,3]\n[2]\n[2,2]\n[2,2,3]\n[2,2,3,3]\n[2,3]\n[2,3,3]\n[3]\n[3,3]",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 100,
+    "title": "Palindrome Partitioning",
+    "status": "FAILED",
+    "passed": 2,
+    "total": 10,
+    "details": [
+      {
+        "case": 1,
+        "passed": false,
+        "input": "aab",
+        "expected": "[[a,a,b],[aa,b]]",
+        "actual": "[a,a,b]\n[aa,b]",
+        "stderr": ""
+      },
+      {
+        "case": 2,
+        "passed": false,
+        "input": "a",
+        "expected": "[[a]]",
+        "actual": "[a]",
+        "stderr": ""
+      },
+      {
+        "case": 3,
+        "passed": false,
+        "input": "aba",
+        "expected": "[[a,b,a],[aba]]",
+        "actual": "[a,b,a]\n[aba]",
+        "stderr": ""
+      },
+      {
+        "case": 6,
+        "passed": false,
+        "input": "abc",
+        "expected": "[[a,b,c]]",
+        "actual": "[a,b,c]",
+        "stderr": ""
+      },
+      {
+        "case": 7,
+        "passed": false,
+        "input": "racecar",
+        "expected": "[[r,a,c,e,c,a,r],[r,aceca,r],[racecar]]",
+        "actual": "[r,a,c,e,c,a,r]\n[r,a,cec,a,r]\n[r,aceca,r]\n[racecar]",
+        "stderr": ""
+      },
+      {
+        "case": 8,
+        "passed": false,
+        "input": "aaaa",
+        "expected": "8 partitions",
+        "actual": "[a,a,a,a]\n[a,a,aa]\n[a,aa,a]\n[a,aaa]\n[aa,a,a]\n[aa,aa]\n[aaa,a]\n[aaaa]",
+        "stderr": ""
+      },
+      {
+        "case": 9,
+        "passed": false,
+        "input": "ababa",
+        "expected": "[[a,b,a,b,a],[a,b,aba],[a,bab,a],[aba,b,a],[ababa]]",
+        "actual": "[a,b,a,b,a]\n[a,b,aba]\n[a,bab,a]\n[aba,b,a]\n[ababa]",
+        "stderr": ""
+      },
+      {
+        "case": 10,
+        "passed": false,
+        "input": "aabb",
+        "expected": "[a,a,b,b]\n[aa,b,b]\n[a,a,bb]\n[aa,bb]",
+        "actual": "[a,a,b,b]\n[a,a,bb]\n[aa,b,b]\n[aa,bb]",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 103,
+    "title": "Sudoku Solver",
+    "status": "FAILED",
+    "passed": 1,
+    "total": 11,
+    "details": [
+      {
+        "case": 2,
+        "passed": false,
+        "input": "[Nearly complete Sudoku board \u2014 exact input not specified in the master file]",
+        "expected": "The missing value is filled correctly.",
+        "actual": "",
+        "stderr": "Exception in thread \"main\" java.lang.StringIndexOutOfBoundsException: Index 7 out of bounds for length 7\n\tat java.base/jdk.internal.util.Preconditions"
+      },
+      {
+        "case": 3,
+        "passed": false,
+        "input": "[Not specified in the master file]",
+        "expected": "[Not specified in the master file]",
+        "actual": "",
+        "stderr": "Exception in thread \"main\" java.lang.StringIndexOutOfBoundsException: Index 4 out of bounds for length 4\n\tat java.base/jdk.internal.util.Preconditions"
+      },
+      {
+        "case": 4,
+        "passed": false,
+        "input": "[Board with multiple empty cells concentrated in one row \u2014 exact input not specified]",
+        "expected": "534678912\n672195348\n198342567\n859761423\n426853791\n713924856\n961537284\n287419635\n345286179",
+        "actual": "",
+        "stderr": "Exception in thread \"main\" java.lang.StringIndexOutOfBoundsException: Index 6 out of bounds for length 6\n\tat java.base/jdk.internal.util.Preconditions"
+      },
+      {
+        "case": 5,
+        "passed": false,
+        "input": "[Board with multiple empty cells concentrated in one column \u2014 exact input not specified]",
+        "expected": "534678912\n672195348\n198342567\n859761423\n426853791\n713924856\n961537284\n287419635\n345286179",
+        "actual": "",
+        "stderr": "Exception in thread \"main\" java.lang.StringIndexOutOfBoundsException: Index 6 out of bounds for length 6\n\tat java.base/jdk.internal.util.Preconditions"
+      },
+      {
+        "case": 6,
+        "passed": false,
+        "input": "[Board requiring changes inside a single 3\u00d73 box \u2014 exact input not specified]",
+        "expected": "534678912\n672195348\n198342567\n859761423\n426853791\n713924856\n961537284\n287419635\n345286179",
+        "actual": "",
+        "stderr": "Exception in thread \"main\" java.lang.StringIndexOutOfBoundsException: Index 6 out of bounds for length 6\n\tat java.base/jdk.internal.util.Preconditions"
+      },
+      {
+        "case": 7,
+        "passed": false,
+        "input": "[Board requiring substantial backtracking \u2014 exact input not specified]",
+        "expected": "534678912\n672195348\n198342567\n859761423\n426853791\n713924856\n961537284\n287419635\n345286179",
+        "actual": "",
+        "stderr": "Exception in thread \"main\" java.lang.StringIndexOutOfBoundsException: Index 6 out of bounds for length 6\n\tat java.base/jdk.internal.util.Preconditions"
+      },
+      {
+        "case": 8,
+        "passed": false,
+        "input": "[Board with only a few empty cells \u2014 exact input not specified]",
+        "expected": "534678912\n672195348\n198342567\n859761423\n426853791\n713924856\n961537284\n287419635\n345286179",
+        "actual": "",
+        "stderr": "Exception in thread \"main\" java.lang.StringIndexOutOfBoundsException: Index 6 out of bounds for length 6\n\tat java.base/jdk.internal.util.Preconditions"
+      },
+      {
+        "case": 9,
+        "passed": false,
+        "input": "[Board with many empty cells \u2014 exact input not specified]",
+        "expected": "534678912\n672195348\n198342567\n859761423\n426853791\n713924856\n961537284\n287419635\n345286179",
+        "actual": "",
+        "stderr": "Exception in thread \"main\" java.lang.StringIndexOutOfBoundsException: Index 6 out of bounds for length 6\n\tat java.base/jdk.internal.util.Preconditions"
+      },
+      {
+        "case": 10,
+        "passed": false,
+        "input": "[V alid board where an early candidate causes a later contradiction \u2014 exact input not\nspecified]",
+        "expected": "534678912\n672195348\n198342567\n859761423\n426853791\n713924856\n961537284\n287419635\n345286179",
+        "actual": "",
+        "stderr": "Exception in thread \"main\" java.lang.StringIndexOutOfBoundsException: Index 2 out of bounds for length 2\n\tat java.base/jdk.internal.util.Preconditions"
+      },
+      {
+        "case": 11,
+        "passed": false,
+        "input": "[V alid difficult Sudoku \u2014 exact input not specified]",
+        "expected": "534678912\n672195348\n198342567\n859761423\n426853791\n713924856\n961537284\n287419635\n345286179",
+        "actual": "",
+        "stderr": "Exception in thread \"main\" java.lang.StringIndexOutOfBoundsException: Index 2 out of bounds for length 2\n\tat java.base/jdk.internal.util.Preconditions"
+      }
+    ]
+  },
+  {
+    "order": 104,
+    "title": "Generate All Valid IP Addresses",
+    "status": "FAILED",
+    "passed": 9,
+    "total": 10,
+    "details": [
+      {
+        "case": 8,
+        "passed": false,
+        "input": "123456789012",
+        "expected": "0.0.0.0",
+        "actual": "[]",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 107,
+    "title": "Clone Graph",
+    "status": "FAILED",
+    "passed": 0,
+    "total": 10,
+    "details": [
+      {
+        "case": 1,
+        "passed": false,
+        "input": "1: []",
+        "expected": "Cloned node with no neighbors.",
+        "actual": "1: []",
+        "stderr": ""
+      },
+      {
+        "case": 2,
+        "passed": false,
+        "input": "1: [2]\n2: [1]",
+        "expected": "Two-node deep copy.",
+        "actual": "1: [2]\n2: [1]",
+        "stderr": ""
+      },
+      {
+        "case": 3,
+        "passed": false,
+        "input": "1: [2,3]\n2: [1,3]\n3: [1,2]",
+        "expected": "Three-node deep copy with identical adjacency relationships.",
+        "actual": "1: [2, 3]\n2: [1, 3]\n3: [1, 2]",
+        "stderr": ""
+      },
+      {
+        "case": 4,
+        "passed": false,
+        "input": "1: [2,4]\n2: [1,3]\n3: [2,4]\n4: [1,3]",
+        "expected": "Deep copy with identical adjacency relationships.",
+        "actual": "1: [2, 4]\n2: [1, 3]\n4: [1, 3]\n3: [2, 4]",
+        "stderr": ""
+      },
+      {
+        "case": 5,
+        "passed": false,
+        "input": "1: [2,3,4,5]\n2: [1]\n3: [1]\n4: [1]\n5: [1]",
+        "expected": "Deep copy with identical adjacency relationships.",
+        "actual": "1: [2, 3, 4, 5]\n2: [1]\n3: [1]\n4: [1]\n5: [1]",
+        "stderr": ""
+      },
+      {
+        "case": 6,
+        "passed": false,
+        "input": "1: [2]\n2: [1,3]\n3: [2,4]\n4: [3]",
+        "expected": "Deep copy with identical adjacency relationships.",
+        "actual": "1: [2]\n2: [1, 3]\n3: [2, 4]\n4: [3]",
+        "stderr": ""
+      },
+      {
+        "case": 7,
+        "passed": false,
+        "input": "1: [1]",
+        "expected": "Deep copy containing the self-loop.",
+        "actual": "1: [1]",
+        "stderr": ""
+      },
+      {
+        "case": 8,
+        "passed": false,
+        "input": "1: [2,3]\n2: [1,3]\n3: [1,2,4]\n4: [3]",
+        "expected": "Deep copy with identical adjacency relationships.",
+        "actual": "1: [2, 3]\n2: [1, 3]\n3: [1, 2, 4]\n4: [3]",
+        "stderr": ""
+      },
+      {
+        "case": 9,
+        "passed": false,
+        "input": "10-node connected graph",
+        "expected": "Deep copy with identical adjacency relationships.",
+        "actual": "",
+        "stderr": ""
+      },
+      {
+        "case": 10,
+        "passed": false,
+        "input": "Graph containing multiple cycles",
+        "expected": "Deep copy with identical adjacency relationships.\nnot provide actual node data for them, so don't invent it. DSA Problem Bank_1(1)",
+        "actual": "",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 108,
+    "title": "Walls and Gates",
+    "status": "FAILED",
+    "passed": 5,
+    "total": 8,
+    "details": [
+      {
+        "case": 6,
+        "passed": false,
+        "input": "0 -1 INF\nINF -1 INF\nINF INF INF",
+        "expected": "0 -1 INF\n1 -1 INF\n2 3 4",
+        "actual": "0 -1 6\n1 -1 5\n2 3 4",
+        "stderr": ""
+      },
+      {
+        "case": 7,
+        "passed": false,
+        "input": "INF 0 INF\nINF INF INF\nINF INF 0",
+        "expected": "1 0 1\n2 1 1\n3 2 0",
+        "actual": "1 0 1\n2 1 1\n2 1 0",
+        "stderr": ""
+      },
+      {
+        "case": 8,
+        "passed": false,
+        "input": "0 INF INF INF\nINF -1 -1 INF\nINF INF INF INF\nINF INF INF 0",
+        "expected": "0 1 2 3\n1 -1 -1 4\n2 3 4 1\n3 4 5 0",
+        "actual": "0 1 2 3\n1 -1 -1 2\n2 3 2 1\n3 2 1 0",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 109,
+    "title": "Rotting Oranges",
+    "status": "FAILED",
+    "passed": 9,
+    "total": 10,
+    "details": [
+      {
+        "case": 9,
+        "passed": false,
+        "input": "3 4\n2 1 0 1\n1 1 0 1\n0 1 1 1",
+        "expected": "5",
+        "actual": "7",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 110,
+    "title": "Pacific Atlantic Water Flow",
+    "status": "FAILED",
+    "passed": 4,
+    "total": 10,
+    "details": [
+      {
+        "case": 4,
+        "passed": false,
+        "input": "3 1\n1\n2\n3",
+        "expected": "All three cells can reach both oceans.",
+        "actual": "[[0,0],[1,0],[2,0]]",
+        "stderr": ""
+      },
+      {
+        "case": 5,
+        "passed": false,
+        "input": "2 2\n1 1\n1 1",
+        "expected": "all 4 cells",
+        "actual": "[[0,0],[0,1],[1,0],[1,1]]",
+        "stderr": ""
+      },
+      {
+        "case": 7,
+        "passed": false,
+        "input": "3 3\n5 5 5\n5 1 5\n5 5 5",
+        "expected": "all boundary cells and appropriate reachable cells",
+        "actual": "[[0,0],[0,1],[0,2],[1,0],[1,2],[2,0],[2,1],[2,2]]",
+        "stderr": ""
+      },
+      {
+        "case": 8,
+        "passed": false,
+        "input": "A strictly increasing diagonal terrain",
+        "expected": "valid cells satisfying both-ocean reachability",
+        "actual": "",
+        "stderr": ""
+      },
+      {
+        "case": 9,
+        "passed": false,
+        "input": "A matrix containing equal-height plateaus",
+        "expected": "valid cells satisfying both-ocean reachability",
+        "actual": "",
+        "stderr": ""
+      },
+      {
+        "case": 10,
+        "passed": false,
+        "input": "A large matrix with multiple peaks and valleys",
+        "expected": "valid cells satisfying both-ocean reachability",
+        "actual": "",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 113,
+    "title": "Course Schedule II",
+    "status": "FAILED",
+    "passed": 5,
+    "total": 9,
+    "details": [
+      {
+        "case": 5,
+        "passed": false,
+        "input": "3\n2\n1 0\n2 0",
+        "expected": "[0,1,2]\nor\n[0,2,1]",
+        "actual": "[0,1,2]",
+        "stderr": ""
+      },
+      {
+        "case": 6,
+        "passed": false,
+        "input": "4\n4\n1 0\n2 0\n3 1\n3 2",
+        "expected": "[0,1,2,3]\nor another valid topological ordering.",
+        "actual": "[0,1,2,3]",
+        "stderr": ""
+      },
+      {
+        "case": 8,
+        "passed": false,
+        "input": "5\n0",
+        "expected": "Any permutation of:\n[0,1,2,3,4]",
+        "actual": "[0,1,2,3,4]",
+        "stderr": ""
+      },
+      {
+        "case": 9,
+        "passed": false,
+        "input": "5\n4\n1 0\n2 1\n3 0\n4 3",
+        "expected": "[0,1,3,2,4]\nor another valid topological order",
+        "actual": "[0,1,2,3,4]",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 119,
+    "title": "Min Cost to Connect All Points",
+    "status": "FAILED",
+    "passed": 9,
+    "total": 10,
+    "details": [
+      {
+        "case": 10,
+        "passed": false,
+        "input": "[[100,100],[200,100],[200,300],[500,300]]",
+        "expected": "500",
+        "actual": "600",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 122,
+    "title": "Alien Dictionary",
+    "status": "FAILED",
+    "passed": 6,
+    "total": 8,
+    "details": [
+      {
+        "case": 7,
+        "passed": false,
+        "input": "[\"ab\",\"ac\"]",
+        "expected": "Any valid ordering satisfying b \u2192 c",
+        "actual": "\"abc\"",
+        "stderr": ""
+      },
+      {
+        "case": 8,
+        "passed": false,
+        "input": "[\"abc\",\"bca\",\"cab\"]",
+        "expected": "A valid ordering satisfying the inferred constraints",
+        "actual": "\"abc\"",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 123,
+    "title": "Cheapest Flights Within K Stops",
+    "status": "FAILED",
+    "passed": 5,
+    "total": 6,
+    "details": [
+      {
+        "case": 1,
+        "passed": false,
+        "input": "n = 4\nflights = [\n[0,1,100],\n[1,2,100],\n[2,3,100],\n[0,2,500]\n]\nsrc = 0\ndst = 3\nk = 1",
+        "expected": "700",
+        "actual": "600",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 130,
+    "title": "House Robber II",
+    "status": "FAILED",
+    "passed": 9,
+    "total": 10,
+    "details": [
+      {
+        "case": 8,
+        "passed": false,
+        "input": "[10,1,1,10,1]",
+        "expected": "11",
+        "actual": "20",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 131,
+    "title": "Longest Palindromic Substring",
+    "status": "FAILED",
+    "passed": 9,
+    "total": 10,
+    "details": [
+      {
+        "case": 5,
+        "passed": false,
+        "input": "abcd",
+        "expected": "Any single character",
+        "actual": "a",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 139,
+    "title": "Combination Sum IV",
+    "status": "FAILED",
+    "passed": 8,
+    "total": 10,
+    "details": [
+      {
+        "case": 8,
+        "passed": false,
+        "input": "2\n1 5\n5",
+        "expected": "1",
+        "actual": "2",
+        "stderr": ""
+      },
+      {
+        "case": 9,
+        "passed": false,
+        "input": "2\n2 4\n6",
+        "expected": "2",
+        "actual": "3",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 141,
+    "title": "Jump Game",
+    "status": "FAILED",
+    "passed": 9,
+    "total": 10,
+    "details": [
+      {
+        "case": 7,
+        "passed": false,
+        "input": "5\n2 3 0 0 4",
+        "expected": "false",
+        "actual": "true",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 144,
+    "title": "Best Time to Buy and Sell Stock with Cooldown",
+    "status": "FAILED",
+    "passed": 8,
+    "total": 10,
+    "details": [
+      {
+        "case": 7,
+        "passed": false,
+        "input": "6\n1 2 3 0 2 4",
+        "expected": "4",
+        "actual": "5",
+        "stderr": ""
+      },
+      {
+        "case": 10,
+        "passed": false,
+        "input": "7\n1 2 3 0 2 4 1",
+        "expected": "4",
+        "actual": "5",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 145,
+    "title": "Coin Change II",
+    "status": "FAILED",
+    "passed": 9,
+    "total": 10,
+    "details": [
+      {
+        "case": 10,
+        "passed": false,
+        "input": "4\n2 5 10 20\n20",
+        "expected": "6",
+        "actual": "7",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 147,
+    "title": "Interleaving String",
+    "status": "FAILED",
+    "passed": 8,
+    "total": 9,
+    "details": [
+      {
+        "case": 8,
+        "passed": false,
+        "input": "a\na",
+        "expected": "true",
+        "actual": "",
+        "stderr": "Exception in thread \"main\" java.util.NoSuchElementException: No line found\n\tat java.base/java.util.Scanner.nextLine(Scanner.java:1660)\n\tat Solution.ma"
+      }
+    ]
+  },
+  {
+    "order": 148,
+    "title": "Longest Increasing Path in a Matrix",
+    "status": "FAILED",
+    "passed": 7,
+    "total": 10,
+    "details": [
+      {
+        "case": 6,
+        "passed": false,
+        "input": "2 2\n4 32 1",
+        "expected": "1",
+        "actual": "0",
+        "stderr": ""
+      },
+      {
+        "case": 9,
+        "passed": false,
+        "input": "2 2\n1 2\n4 3",
+        "expected": "3",
+        "actual": "4",
+        "stderr": ""
+      },
+      {
+        "case": 10,
+        "passed": false,
+        "input": "3 3\n1 2 36 5 4\n7 8 9",
+        "expected": "9",
+        "actual": "0",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 150,
+    "title": "Edit Distance",
+    "status": "FAILED",
+    "passed": 7,
+    "total": 10,
+    "details": [
+      {
+        "case": 4,
+        "passed": false,
+        "input": "",
+        "expected": "0",
+        "actual": "",
+        "stderr": "Exception in thread \"main\" java.util.NoSuchElementException: No line found\n\tat java.base/java.util.Scanner.nextLine(Scanner.java:1660)\n\tat Solution.ma"
+      },
+      {
+        "case": 5,
+        "passed": false,
+        "input": "abc",
+        "expected": "3",
+        "actual": "",
+        "stderr": "Exception in thread \"main\" java.util.NoSuchElementException: No line found\n\tat java.base/java.util.Scanner.nextLine(Scanner.java:1660)\n\tat Solution.ma"
+      },
+      {
+        "case": 6,
+        "passed": false,
+        "input": "abc",
+        "expected": "3",
+        "actual": "",
+        "stderr": "Exception in thread \"main\" java.util.NoSuchElementException: No line found\n\tat java.base/java.util.Scanner.nextLine(Scanner.java:1660)\n\tat Solution.ma"
+      }
+    ]
+  },
+  {
+    "order": 151,
+    "title": "Burst Balloons",
+    "status": "FAILED",
+    "passed": 8,
+    "total": 10,
+    "details": [
+      {
+        "case": 6,
+        "passed": false,
+        "input": "2\n2 3",
+        "expected": "6",
+        "actual": "9",
+        "stderr": ""
+      },
+      {
+        "case": 8,
+        "passed": false,
+        "input": "4\n3 7 2 8",
+        "expected": "120",
+        "actual": "312",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 152,
+    "title": "Maximum Subarray",
+    "status": "FAILED",
+    "passed": 9,
+    "total": 10,
+    "details": [
+      {
+        "case": 10,
+        "passed": false,
+        "input": "6\n8 -1 2 -6 7 3",
+        "expected": "10",
+        "actual": "13",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 153,
+    "title": "Jump Game II",
+    "status": "FAILED",
+    "passed": 9,
+    "total": 10,
+    "details": [
+      {
+        "case": 10,
+        "passed": false,
+        "input": "6\n3 2 1 1 1 1",
+        "expected": "2",
+        "actual": "3",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 154,
+    "title": "Gas Station",
+    "status": "FAILED",
+    "passed": 8,
+    "total": 10,
+    "details": [
+      {
+        "case": 8,
+        "passed": false,
+        "input": "4\n6 1 4 3\n5 2 5 2",
+        "expected": "0",
+        "actual": "3",
+        "stderr": ""
+      },
+      {
+        "case": 9,
+        "passed": false,
+        "input": "3\n2 0 2\n1 1 2",
+        "expected": "2",
+        "actual": "0",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 155,
+    "title": "Hand of Straights",
+    "status": "FAILED",
+    "passed": 9,
+    "total": 10,
+    "details": [
+      {
+        "case": 10,
+        "passed": false,
+        "input": "6\n1 2 3 5 6 7\n3",
+        "expected": "False",
+        "actual": "true",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 156,
+    "title": "Merge Triplets to Form Target Triplet",
+    "status": "FAILED",
+    "passed": 8,
+    "total": 9,
+    "details": [
+      {
+        "case": 7,
+        "passed": false,
+        "input": "4\n2 3 4\n2 3 3\n1 1 1\n4 4 4",
+        "expected": "true",
+        "actual": "false",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "order": 164,
+    "title": "Minimum Interval to Include Each Query",
+    "status": "FAILED",
+    "passed": 6,
+    "total": 7,
+    "details": [
+      {
+        "case": 5,
+        "passed": false,
+        "input": "3\n1 10\n2 5\n3 4\n3\n3 4 8",
+        "expected": "3 2 8",
+        "actual": "2 2 10",
+        "stderr": ""
+      }
+    ]
+  }
+]

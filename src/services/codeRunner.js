@@ -21,7 +21,7 @@ export const normalizeOutput = (str) => {
   return String(str)
     .replace(/\r\n/g, '\n')
     .split('\n')
-    .map(line => line.trim())
+    .map(line => line.trim().replace(/,\s+/g, ','))
     .filter(line => line.length > 0)
     .join('\n')
     .trim()
@@ -442,7 +442,9 @@ export const runCodeAgainstTestCases = async (code, language, testCases, isFullS
 
     const normActual = normalizeOutput(execResult.actualOutput);
     const normExpected = normalizeOutput(tc.expectedOutput);
-    const passed = normActual === normExpected || (normActual.includes(normExpected) && normExpected.length > 0);
+    const actualSortedLines = normActual.split('\n').sort().join('\n');
+    const expectedSortedLines = normExpected.split('\n').sort().join('\n');
+    const passed = (normActual === normExpected) || (actualSortedLines === expectedSortedLines) || (normActual.includes(normExpected) && normExpected.length > 0);
 
     if (!passed) {
       allPassed = false;
